@@ -3,24 +3,18 @@ import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
-const mockUrls = [
-  "https://pdop9zxk2l.ufs.sh/f/shFDG4Q7AWn0qNpbjXrNa6eGA4z1TlkYUDEyjshWFC2Rvcd9",
-  "https://pdop9zxk2l.ufs.sh/f/shFDG4Q7AWn0ydFjev91CPGQAxM6RY5SiOq9sXrUzEcw7hla",
-];
-
- const mockImages = mockUrls.map((url, index) => ({
-  id: index + 1,
-  url,
- }));
-
 export default async function HomePage() {
+  const images = await db.query.images.findMany({
+    orderBy: (model, { desc }) => desc(model.id),
+  });
 
   return (
     <main className="">
       <div className="flex flex-wrap gap-4">
-        {mockImages.map((image) => (
-          <div key={image.id} className="w-48">
+        {images.map((image, index) => (
+          <div key={image.id + "-" + index} className="w-48 flex flex-col">
             <img src={image.url} />
+            <div>{image.name}</div>
           </div>
         ))}
       </div>
