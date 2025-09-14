@@ -41,6 +41,9 @@ importers:
       server:
         specifier: link:@clerk/nextjs/server
         version: link:@clerk/nextjs/server
+      server-only:
+        specifier: ^0.0.1
+        version: 0.0.1
       uploadthing:
         specifier: ^7.7.4
         version: 7.7.4(next@15.5.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(tailwindcss@3.4.17)
