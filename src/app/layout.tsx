@@ -9,6 +9,7 @@ import { ourFileRouter } from "./api/uploadthing/core";
 import { TopNav } from "./_components/topnav";
 
 import { Inter } from "next/font/google";
+import type React from "react";
 
 export const metadata: Metadata = {
   title: "T3 Gallery",
@@ -23,8 +24,10 @@ const inter = Inter({
 
 export default function RootLayout({
   children,
+  modal,
 }: { 
-  children: React.ReactNode 
+  children: React.ReactNode ;
+  modal: React.ReactNode;
 }) {
   return (
     <ClerkProvider>
@@ -41,6 +44,7 @@ export default function RootLayout({
         <body className={`font-sans ${inter.variable} flex flex-col gap-4`}>
           <TopNav />
           {children}
+          {modal}
         </body>
       </html>
     </ClerkProvider>
