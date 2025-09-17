@@ -1,8 +1,8 @@
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
 
-import type { Metadata } from "next"
-import { ClerkProvider } from '@clerk/nextjs'
+import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
@@ -25,8 +25,8 @@ const inter = Inter({
 export default function RootLayout({
   children,
   modal,
-}: { 
-  children: React.ReactNode ;
+}: {
+  children: React.ReactNode;
   modal: React.ReactNode;
 }) {
   return (

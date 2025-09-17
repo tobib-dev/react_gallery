@@ -10,30 +10,31 @@ async function Images() {
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
-        {images.map((image) => (
-          <div key={image.id} className="h-48 w-48 flex flex-col">
-            <Link href={`/img/${image.id}`}>
-              <Image 
-              src={image.url} 
-              style={{objectFit: "contain"}}
+      {images.map((image) => (
+        <div key={image.id} className="flex h-48 w-48 flex-col">
+          <Link href={`/img/${image.id}`}>
+            <Image
+              src={image.url}
+              style={{ objectFit: "contain" }}
               width={480}
               height={480}
-              alt={image.name} 
+              alt={image.name}
             />
-            </Link>
-            <div>{image.name}</div>
-          </div>
-        ))}
-      </div>
-  )
+          </Link>
+          <div>{image.name}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default async function HomePage() {
   return (
     <main className="">
-      
       <SignedOut>
-        <div className="h-full w-full text-2xl text-center">Please sign in above</div>
+        <div className="h-full w-full text-center text-2xl">
+          Please sign in above
+        </div>
       </SignedOut>
       <SignedIn>
         <Images />

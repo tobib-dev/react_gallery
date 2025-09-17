@@ -2,12 +2,12 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
-import { 
-  index, 
-  varchar, 
-  timestamp, 
-  serial, 
-  pgTableCreator 
+import {
+  index,
+  varchar,
+  timestamp,
+  serial,
+  pgTableCreator,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -28,7 +28,7 @@ export const images = createTable(
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
-    updatedAt: timestamp('updatedAt').$onUpdate(() => new Date()),
+    updatedAt: timestamp("updatedAt").$onUpdate(() => new Date()),
   },
   (example) => ({
     nameIndex: index("name_idx").on(example.name),

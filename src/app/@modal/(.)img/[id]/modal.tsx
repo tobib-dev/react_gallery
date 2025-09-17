@@ -5,24 +5,28 @@ import { useRouter } from "next/navigation";
 import { createPortal } from "react-dom";
 
 export function Modal({ children }: { children: React.ReactNode }) {
-    const router = useRouter();
-    const dialogRef = useRef<HTMLDialogElement>(null);
+  const router = useRouter();
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
-    useEffect(() => {
-        if (!dialogRef.current?.open) {
-            dialogRef.current?.showModal();
-        }
-    }, []);
-
-    function onDismiss() {
-        router.back();
+  useEffect(() => {
+    if (!dialogRef.current?.open) {
+      dialogRef.current?.showModal();
     }
+  }, []);
 
-    return createPortal(
-        <dialog ref={dialogRef} className="w-screen h-screen bg-zinc-900/50" onClose={onDismiss}>
-            {children}
-            <button onClick={onDismiss} className="close-button" />
-        </dialog>,
-        document.getElementById('modal-root')!
-    );
+  function onDismiss() {
+    router.back();
+  }
+
+  return createPortal(
+    <dialog
+      ref={dialogRef}
+      className="h-screen w-screen bg-zinc-900/50"
+      onClose={onDismiss}
+    >
+      {children}
+      {/* <button onClick={onDismiss} className="close-button" /> */}
+    </dialog>,
+    document.getElementById("modal-root")!,
+  );
 }
