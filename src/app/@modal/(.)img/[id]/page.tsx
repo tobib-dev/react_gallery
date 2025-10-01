@@ -6,9 +6,8 @@ export default async function PhotoModal({
 }: {
   params: Promise<{ id: string }>;
 }) {
-
   const resolvedParams = await params;
-  const { id: photoId} = resolvedParams;
+  const { id: photoId } = resolvedParams;
 
   return (
     <Modal>

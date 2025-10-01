@@ -5,7 +5,6 @@ export default async function PhotoPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-
   const resolvedParams = await params;
   const { id: photoId } = resolvedParams;
 
