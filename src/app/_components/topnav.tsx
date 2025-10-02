@@ -4,7 +4,7 @@ import { SimpleUploadButton } from "./simple-upload-button";
 
 export function TopNav() {
   return (
-    <nav className="flex w-full items-center justify-between border-b p-2 text-lg font-semibold h-20">
+    <nav className="flex h-20 w-full items-center justify-between border-b p-2 text-lg font-semibold">
       <div>Gallery</div>
 
       <div className="flex flex-row items-center gap-4">
