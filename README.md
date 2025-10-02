@@ -16,5 +16,5 @@
 - [x] Update upload button to from default
 - [x] Integrate Shadcn for ui (specifically toast)
 - [x] Analytics (posthog)
-- [ ] Delete button (w/ Server Actions)
-- [ ] Ratelimiting (upstash)
+- [x] Delete button (w/ Server Actions)
+- [x] Ratelimiting (upstash)
